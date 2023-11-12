@@ -164,8 +164,7 @@ def transfet_img(img_path: str, save_path: str, save_prename: str) -> None:
 # Test
 if __name__ == '__main__':
     # source domain
-    # , 'YS', 'UTS', 'UTS_2', 'EL'
-    for file_name in {"D:/yuyouyu/SHU/Transfer_Learning/HEA/Data/Xiong's verification data/HV.xlsx"}:
+    for file_name in {"D:/yuyouyu/SHU/Transfer_Learning/HEA/Data/Xiong's verification data/EL.xlsx"}:
         Original_data = pd.read_excel(file_name)
         try:
             Original_data.drop(columns=['class'], inplace=True)
@@ -175,5 +174,5 @@ if __name__ == '__main__':
         # chem_name = list(Original_data.columns.values)[:-1]
         chem_name = ['Al', 'Co', 'Cr', 'Fe', 'Ni'] # 'Cu', 'Mn'
         datatransformer = DataTransform(data_path=file_name, save_path="D:/yuyouyu/SHU/Transfer_Learning/HEA/Data/Xiong's verification data/")
-        pic_1 = datatransformer.generate_img(img_template_path = './ImgTemplate.xlsx', chemical_compositions=chem_name, file_name='Schedule_HV', saving_o=True, o_file_name='xenonpy_HV', if_gray=False)
+        pic_1 = datatransformer.generate_img(img_template_path = './ImgTemplate.xlsx', chemical_compositions=chem_name, file_name='Schedule_EL', saving_o=True, o_file_name='xenonpy_EL', if_gray=False)
         # pic_2 = datatransformer.generate_img(img_template_path = './PICTURE.xlsx', file_name='Normal_Xiong_Verification-1', original_img_path='../EXP_data/xenonpy_Xiong_Verification-1.csv', if_gray=False)
